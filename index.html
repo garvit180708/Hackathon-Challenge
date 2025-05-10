@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌍 Travel Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <!-- Loading Spinner Overlay -->
+  <div id="loadingOverlay" class="hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Discover the World</h1>
+      <p>Your adventure starts here</p>
+      <div class="search-bar-hero">
+        <input type="text" id="countryInput" placeholder="Enter a country..." list="suggestions"/>
+        <datalist id="suggestions"></datalist>
+        <button onclick="searchCountry()">Explore</button>
+      </div>
+    </div>
+    <div class="scroll-down">&#x25BC;</div>
+  </section>
+
+  <!-- Featured Destinations Carousel -->
+  <section class="featured">
+    <h2>Featured Destinations</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" onclick="slide(-1)">‹</button>
+      <div class="slides">
+        <div class="slide"><img src="https://source.unsplash.com/400x300/?paris" alt="Paris"><p>Paris</p></div>
+        <div class="slide"><img src="https://source.unsplash.com/400x300/?tokyo" alt="Tokyo"><p>Tokyo</p></div>
+        <div class="slide"><img src="https://source.unsplash.com/400x300/?sydney" alt="Sydney"><p>Sydney</p></div>
+      </div>
+      <button class="carousel-btn next" onclick="slide(1)">›</button>
+    </div>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="tips">
+    <h2>Travel Tips</h2>
+    <div class="tip-cards">
+      <div class="tip-card">
+        <h3>Pack Light</h3>
+        <p>Bring versatile clothing and travel-sized essentials.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Local Cuisine</h3>
+        <p>Try street food for the most authentic flavors.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Stay Safe</h3>
+        <p>Keep copies of your documents and stay aware of your surroundings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main App Content -->
+  <main>
+    <div id="countryDetails" class="card hidden"></div>
+    <div id="weatherDetails" class="card hidden"></div>
+    <div id="imageGallery" class="gallery hidden"></div>
+    <div id="map" class="card hidden" style="height: 400px;"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Garvit. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
